@@ -1,0 +1,46 @@
+{{ 'custom-hero-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="hero-banner_container" style="background: {{ section.settings.color }};">
+     <span class="hero-banner_gradient left"
+           style="background: linear-gradient(90deg, {{ section.settings.color }} 70%, transparent 100%);"></span>
+    <div class="hero-banner_product" style="background-image: url('{{ section.settings.product | image_url }}');">
+        <h3>{{ section.settings.product.title }}</h3>
+        <div class="price">
+            <span>{{ currency.symbol }}</span><span>{{ section.settings.product.price }}</span>
+            <span>{{ currency.symbol }}{{ section.settings.product.compare_at_price }}</span>
+        </div>
+    </div>
+    <span class="hero-banner_gradient right"
+          style="background: linear-gradient(90deg, transparent 0%, {{ section.settings.color }} 30%);"></span>
+</div>
+
+{% schema %}
+
+{
+"name": "Hero banner",
+"tag": "section",
+"class": "hero-banner",
+"settings": [
+{
+"id": "color",
+"type": "color",
+"default": "#FFFFFF",
+"label": "Choose banners color"
+},
+{
+"type": "product",
+"id": "product",
+"label": "t:sections.featured-product.settings.product.label"
+}
+],
+"presets": [
+{
+"name": "Hero banner",
+"settings": {
+"color": "#131824"
+}
+}
+]
+}
+
+{% endschema %}

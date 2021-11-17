@@ -12,6 +12,9 @@ ul{
 li{
     margin: 0 16px;
 }
+li:last-child{
+    margin-right: 0;
+}
 li > a{
     font-family: 'Mulish', sans-serif;
     font-style: normal;
@@ -27,4 +30,21 @@ li > a.current{
 img{
     display: block;
     width: 100%;
+}
+.navbar,
+.header-icons{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+.header-icons .icon-search{
+    width: 24px;
+    height: 24px;
+    background: #000;
+    margin-right: 24px;
+}
+.header-icons .icon-cart{
+    width: 24px;
+    height: 24px;
+    background: #000;
 }

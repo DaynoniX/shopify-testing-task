@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+
+.hero-banner *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.hero-banner p{
+    color: #ffffff;
+
+}
+.hero-banner_container{
+    height: calc(100vh - 80px);
+    position: relative;
+}
+.hero-banner_product{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 54%;
+    margin: 0 auto;
+    height: 100%;
+}
+.hero-banner_product h3{
+    color: #ffffff;
+    font-family: 'Goudy Bookletter 1911', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+    display: block;
+    width: 563px;
+    margin: 0 auto;
+    padding-top: 39%;
+    z-index: 10;
+    position: relative;
+}
+.hero-banner_gradient{
+    height: 100%;
+    position: absolute;
+    width: 36.5%;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.hero-banner_gradient.right{
+    left: unset;
+    right: 0;
+}
+.price{
+    display: flex;
+    justify-content: center;
+}
+.price span{
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    margin:  0 7px;
+}
