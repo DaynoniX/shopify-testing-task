@@ -1,0 +1,30 @@
+.custom-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 111px;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+li{
+    margin: 0 16px;
+}
+li > a{
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    color: #202020;
+    text-decoration: none;
+}
+li > a.current{
+    color: #CC0000;
+}
+img{
+    display: block;
+    width: 100%;
+}

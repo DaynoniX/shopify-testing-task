@@ -1,0 +1,7 @@
+.idea
+config.yml
+
+
+# Directory for local usage (needed to buld schemas for components)
+
+__local-json

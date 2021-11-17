@@ -1,0 +1,52 @@
+{{ 'custom-header.css' | asset_url | stylesheet_tag }}
+
+<div class="logo">
+    {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+    <a href="/">
+        <img src="{{ section.settings.logo |  img_url: image_size }}" alt="logo" style="width: {{ section.settings.logo_width }}px">
+    </a>
+</div>
+<div>
+    <nav>
+        <ul>
+            {% for link in section.settings.menu.links %}
+                <li>
+                    <a href="{{ link.url }}" {% if link.current %} class="current" {% endif %}>{{ link.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+
+
+{% schema %}
+{
+"name": "Custom Header",
+"tag": "header",
+"class": "custom-header",
+"settings": [
+{
+"id": "logo",
+"type": "image_picker",
+"label": "t:sections.header.settings.logo.label"
+},
+{
+"type": "range",
+"id": "logo_width",
+"min": 50,
+"max": 250,
+"step": 10,
+"default": 100,
+"unit": "t:sections.header.settings.logo_width.unit",
+"label": "t:sections.header.settings.logo_width.label"
+},
+{
+"type": "link_list",
+"id": "menu",
+"default": "main-menu",
+"label": "t:sections.header.settings.menu.label"
+}
+]
+}
+
+{% endschema %}
