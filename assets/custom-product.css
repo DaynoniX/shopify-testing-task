@@ -1,0 +1,28 @@
+.page-width.custom{
+    padding: 0;
+}
+.product-buy{
+    display: flex;
+    align-items: center;
+}
+.product-buy *{
+    margin: 0;
+}
+.product-buy .product-form__input{
+    flex: unset;
+}
+.product-slider_nav{
+    display: flex;
+    align-items: center;
+}
+.product-slider_nav .item{
+    width: 64px;
+    margin-right: 16px;
+}
+.product-slider_nav .item img{
+    display: block;
+    width: 100% ;
+}
+.product-slider_nav  .slick-track{
+    margin: 0;
+}

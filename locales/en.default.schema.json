@@ -212,6 +212,9 @@
           },
           "options__2": {
             "label": "1600px"
+          },
+          "options__3": {
+            "label": "1144px"
           }
         }
       }
