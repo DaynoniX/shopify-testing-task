@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+
 .page-width.custom{
     padding: 0;
 }
@@ -25,4 +27,40 @@
 }
 .product-slider_nav  .slick-track{
     margin: 0;
+}
+.product-slider_item{
+    position: relative;
+}
+
+.product__title{
+    font-family: 'Goudy Bookletter 1911',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;
+    color: #202020;
+    margin-bottom: 38px;
+}
+.price-item{
+    font-family: 'Mulish',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 45px;
+    color: #CC0000;
+}
+.price--on-sale .price-item.price-item--regular{
+    color: #00000054;
+}
+.price-line{
+    display: flex;
+}
+.product__tax{
+    margin:  0;
+    font-family: 'Mulish',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: #232231;
 }

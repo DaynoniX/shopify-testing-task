@@ -1,6 +1,16 @@
 {{ 'custom-header.css' | asset_url | stylesheet_tag }}
 {{ 'example.css' | asset_url | stylesheet_tag }}
 {{ 'custom-icons-set.css' | asset_url | stylesheet_tag }}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+</style>
+
+{% if section.settings.ajax_cart == true %}
+    {{ 'custom-ajax-cart.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'ajax-cart.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print"
       onload="this.media='all'">
 
@@ -31,20 +41,20 @@
         <div class="cart">
             <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset"
                id="cart-icon-bubble">
-                {%- if cart != empty -%}
-
-                    <i class="customIcon icon-cart"> </i>
-                    <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-                    {%- if cart != empty -%}
-                        <div class="cart-count-bubble custom">
-                            {%- if cart.item_count < 100 -%}
-                                <span aria-hidden="true">{{ cart.item_count }}</span>
-                            {%- endif -%}
-                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                        </div>
-                    {%- endif -%}
+                <i class="customIcon icon-cart"> </i>
+                <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                {%- if cart.item_count < 100 and cart != empty -%}
+                    <div class="cart-count-bubble custom">
+                        <span aria-hidden="true">{{ cart.item_count }}</span>
+                        <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                    </div>
                 {%- endif -%}
             </a>
+            {%- liquid
+                if section.settings.ajax_cart == true
+                    render 'custom-ajax-cart'
+                endif
+            %}
             {%- render 'cart-notification' -%}
         </div>
     </div>
@@ -77,8 +87,15 @@
 "id": "menu",
 "default": "main-menu",
 "label": "t:sections.header.settings.menu.label"
+},
+{
+"id": "ajax_cart",
+"type": "checkbox",
+"label": "Apply AJAX cart",
+"default": false
 }
 ]
 }
+
 
 {% endschema %}
