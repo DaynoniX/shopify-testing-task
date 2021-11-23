@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
 
+.product__info-container>*+*,
+.product__info-container .product-form,
+.product__info-container .product__description{
+    margin: 0;
+}
+.product-form__input--dropdown{
+    margin: 0;
+}
+
 .page-width.custom{
     padding: 0;
 }
 .product-buy{
     display: flex;
     align-items: center;
+    margin-bottom: 46px;
 }
 .product-buy *{
     margin: 0;
@@ -16,10 +26,26 @@
 .product-slider_nav{
     display: flex;
     align-items: center;
+    margin-top: 16px;
 }
 .product-slider_nav .item{
-    width: 64px;
+    width: 64px!important;
     margin-right: 16px;
+    position: relative;
+}
+
+.product-slider_nav .item:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 100%;
+}
+.product-slider_nav .item.slick-current:after{
+    content: none;
 }
 .product-slider_nav .item img{
     display: block;
@@ -54,13 +80,141 @@
 }
 .price-line{
     display: flex;
+    margin-bottom: 34px;
+    margin-top: 18px;
 }
 .product__tax{
-    margin:  0;
+    margin:  3px 0 0;
     font-family: 'Mulish',sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 16px;
     color: #232231;
+}
+
+.product-slider_container{
+    position: relative;
+}
+.product-slider_arrow{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: rgba(32, 32, 32, 0.15);
+    box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.13);
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-slider_arrow.prev{
+    left: 0;
+}
+.product-slider_arrow.next{
+    right: 0;
+}
+
+.product-slider_arrow .icon-arrow{
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+}
+.product-slider_arrow.next .icon-arrow{
+    transform: rotate(180deg);
+}
+
+
+.select{
+    position: relative;
+}
+.select .select__select{
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: inset 0px -1px 3px rgba(0, 0, 0, 0.13);
+
+}
+.product-form__input .form__label{
+    font-family: 'Mulish',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.product__description{
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202020;
+}
+variant-selects{
+    margin-bottom: 18px;
+}
+.product-form__submit{
+    background: #CC0000;
+    border: 1px solid #950000;
+    box-sizing: border-box;
+    box-shadow: inset 0px -2px 2px rgba(32, 32, 32, 0.33);
+    border-radius: 4px;
+    margin-left: 15px;
+    font-family: 'Mulish',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px -1px 0px rgba(32, 32, 32, 0.33);
+    padding: 13px 85px;
+}
+.product-form__submit.button:not([disabled]):hover{
+    box-shadow: inset 0px -2px 2px rgba(32, 32, 32, 0.33);
+}
+
+.quantity.custom{
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
+    width: unset;
+    height: 48px;
+}
+.quantity__input[type=number]{
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.13);
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    width: 63px;
+    height: 100%;
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #202020;
+}
+.quantity__button{
+    box-shadow: inset 0px -2px 3px rgba(0, 0, 0, 0.13);
+    color: #000000;
+    height: 100%;
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+@media screen and (min-width: 990px) {
+    .product:not(.product--no-media):not(.featured-product) .product__info-wrapper {
+        padding-left: 20px;
+        max-width: 41%;
+        width: calc(41% - 20px);
+    }
+    .product:not(.product--no-media):not(.featured-product) .product__media-wrapper {
+        max-width: 59%;
+        width: 59%;
+    }
 }
