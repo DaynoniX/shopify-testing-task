@@ -25,3 +25,11 @@
     mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1701 5.09791V6.96691H6.9281V11.2089H5.0801V6.96691H0.838102V5.09791H5.0801V0.855911H6.9281V5.09791H11.1701Z' fill='black'/%3E%3C/svg%3E");
     -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1701 5.09791V6.96691H6.9281V11.2089H5.0801V6.96691H0.838102V5.09791H5.0801V0.855911H6.9281V5.09791H11.1701Z' fill='black'/%3E%3C/svg%3E");
 }
+.customIcon.icon-close{
+    mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='26' height='25' viewBox='0 0 26 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.35355' y1='0.646452' x2='25.3535' y2='24.6464' stroke='%23202020'/%3E%3Cline x1='0.646447' y1='24.6464' x2='24.6464' y2='0.646442' stroke='%23202020'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='26' height='25' viewBox='0 0 26 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1.35355' y1='0.646452' x2='25.3535' y2='24.6464' stroke='%23202020'/%3E%3Cline x1='0.646447' y1='24.6464' x2='24.6464' y2='0.646442' stroke='%23202020'/%3E%3C/svg%3E");
+}
+.customIcon.icon-burger{
+    mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='17' viewBox='0 0 32 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='0.5' x2='31.5' y2='0.5' stroke='%23202020' stroke-linecap='round'/%3E%3Cline x1='0.5' y1='8.5' x2='24.5' y2='8.5' stroke='%23202020' stroke-linecap='round'/%3E%3Cline x1='0.5' y1='16.5' x2='31.5' y2='16.5' stroke='%23202020' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='17' viewBox='0 0 32 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='0.5' x2='31.5' y2='0.5' stroke='%23202020' stroke-linecap='round'/%3E%3Cline x1='0.5' y1='8.5' x2='24.5' y2='8.5' stroke='%23202020' stroke-linecap='round'/%3E%3Cline x1='0.5' y1='16.5' x2='31.5' y2='16.5' stroke='%23202020' stroke-linecap='round'/%3E%3C/svg%3E");
+}

@@ -7,7 +7,6 @@
     left: 0;
     opacity: 0;
     z-index: -100;
-    transition: opacity 0.2s;
 }
 .cart-popup.active{
     z-index: 100;
@@ -25,5 +24,92 @@
 }
 .cart-popup.active .cart-column{
     transform: translateX(0);
-    transition: 0.3s;
+    transition: transform 0.3s;
+}
+
+.cart-item_list{
+    height: calc(100% - 168px);
+    overflow-y: auto;
+}
+
+.cart-column_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 53px;
+    background: rgba(32, 32, 32, 0.05);
+    padding: 0 20px;
+}
+.cart-column_top span{
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #B4B4B4;
+}
+.cart-item{
+    display: flex;
+    padding: 18px;
+    border-bottom: 1px solid rgba(32, 32, 32, 0.05);
+}
+.cart-item_img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+.cart-item_img img{
+    width: 100%;
+    display: block;
+}
+.cart-item_info .title{
+    margin: 0 0 15px;
+    font-family: 'Mulish',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 20px;
+    color: #202020;
+}
+.cart-item_info .price{
+    margin-bottom: 16px;
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+.cart-item_info .price .current{
+    color: #CC0000;
+}
+.cart-item_info .price .original{
+    color: #b4b4b4;
+    text-decoration: line-through;
+    margin-left: 14px;
+    font-weight: normal;
+}
+.cart-item .quantity.custom{
+    height: 32px;
+    width: 125px;
+}
+.cart-item .quantity.custom .quantity__button{
+    width: 32px;
+}
+.cart-item .quantity.custom  .quantity__input[type=number]{
+    width: 59px;
+    outline: none;
+}
+#closePopupCart{
+    width: 24px;
+    height: 24px;
+    background: #000;
+}
+
+.cart-column_bot{
+    width: 115px;
+    background: rgba(32, 32, 32, 0.05);
 }

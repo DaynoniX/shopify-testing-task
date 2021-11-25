@@ -9,17 +9,19 @@
     margin: 0 auto;
     width: 100%;
 }
-ul{
+.custom-header ul{
     display: flex;
     list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
 }
-li{
+.custom-header li{
     margin: 0 16px;
 }
-li:last-child{
+.custom-header li:last-child{
     margin-right: 0;
 }
-li > a{
+.custom-header li > a{
     font-family: 'Mulish', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -28,7 +30,7 @@ li > a{
     color: #202020;
     text-decoration: none;
 }
-li > a.current{
+.custom-header li > a.current{
     color: #CC0000;
 }
 .logo img{
@@ -55,18 +57,20 @@ li > a.current{
     width: 24px;
     height: 24px;
 }
-
+.custom-header .navbar .mobile-menu{
+    display: none;
+}
 
 #cart-notification{
     width: 100vw;
     border-width: .1em;
     top: 40px;
 }
-.cart{
+.custom-header .cart{
     width: 24px;
     height: 24px;
 }
-.cart-count-bubble.custom{
+.custom-header .cart-count-bubble.custom{
     width: 16px;
     height: 16px;
     background: #CC0000;
@@ -81,7 +85,64 @@ li > a.current{
     line-height: 8px;
     color: #FFFFFF;
 }
-.cart-count-bubble.custom span{
+.custom-header .cart-count-bubble.custom span{
     height: auto;
     display: block;
+}
+
+@media screen and (max-width: 1144px){
+    .custom-header{
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width: 768px){
+    .custom-header{
+        height: 72px;
+    }
+    .navbar{
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+    }
+    .navbar .header-icons .search{
+        display: none;
+    }
+    .custom-header .logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 170px;
+    }
+    .custom-header .navbar .icon-burger{
+        width: 32px;
+        height: 16px;
+        background: #000;
+    }
+    .custom-header .navbar .desktop-menu{
+        display: none;
+    }
+    .custom-header .navbar .mobile-menu{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+        background: #131824;
+        left: 0;
+        top: 0;
+        padding: 80px 20px 0;
+        z-index: 1;
+    }
+    .custom-header .navbar .mobile-menu li>a{
+        color: #ffffff;
+    }
+    .custom-header .navbar .mobile-menu li>a.current{
+        color: #CC0000;
+    }
+    .custom-header .navbar .mobile-menu ul{
+        flex-direction: column;
+    }
+
 }

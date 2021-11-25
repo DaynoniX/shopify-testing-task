@@ -25,14 +25,28 @@
     </a>
 </div>
 <div class="navbar">
-    <nav>
-        <ul>
+    <nav >
+        <i class="customIcon icon-burger"></i>
+        <ul class="desktop-menu">
             {% for link in section.settings.menu.links %}
                 <li>
                     <a href="{{ link.url }}" {% if link.current %} class="current" {% endif %}>{{ link.title }}</a>
                 </li>
             {% endfor %}
         </ul>
+        <div class="mobile-menu">
+            <i class="customIcon icon-close" id="closeMobMenu"></i>
+            <div class="mobile-search">
+                <input type="search">
+            </div>
+            <ul >
+                {% for link in section.settings.menu.links %}
+                    <li>
+                        <a href="{{ link.url }}" {% if link.current %} class="current" {% endif %}>{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </nav>
     <div class="header-icons">
         <div class="search">
@@ -45,7 +59,7 @@
                 <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
                 {%- if cart.item_count < 100 and cart != empty -%}
                     <div class="cart-count-bubble custom">
-                        <span aria-hidden="true">{{ cart.item_count }}</span>
+                        <span aria-hidden="true" id="cart-counter">{{ cart.item_count }}</span>
                         <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
                     </div>
                 {%- endif -%}

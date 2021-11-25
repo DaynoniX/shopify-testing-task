@@ -207,8 +207,9 @@ variant-selects{
     line-height: 21px;
     text-transform: uppercase;
 }
-@media screen and (min-width: 990px) {
-    .product:not(.product--no-media):not(.featured-product) .product__info-wrapper {
+@media screen and (min-width: 768px) {
+    .product:not(.product--no-media):not(.featured-product) .product__info-wrapper,
+    .product__info-wrapper{
         padding-left: 20px;
         max-width: 41%;
         width: calc(41% - 20px);
