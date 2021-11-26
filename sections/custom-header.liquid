@@ -2,6 +2,8 @@
 {{ 'example.css' | asset_url | stylesheet_tag }}
 {{ 'custom-icons-set.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'custom-header.js' | asset_url }}" defer="defer"></script>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
 </style>
@@ -37,7 +39,8 @@
         <div class="mobile-menu">
             <i class="customIcon icon-close" id="closeMobMenu"></i>
             <div class="mobile-search">
-                <input type="search">
+                <input type="search" placeholder="Type your search">
+                <i class="customIcon icon-search"></i>
             </div>
             <ul >
                 {% for link in section.settings.menu.links %}

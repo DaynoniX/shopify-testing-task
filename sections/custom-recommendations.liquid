@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="{{ 'custom-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<div
+        class="product-recommendations page-width custom"
+        data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.quantity }}"
+>
+    {%- if recommendations.performed and recommendations.products_count > 0 and section.settings.show-%}
+        <h2 style="color: {{ section.settings.title_color }}">{{ section.settings.title_text }}</h2>
+        <h3 style="color: {{ section.settings.subtitle_color }}">{{ section.settings.subtitle_text }}</h3>
+
+        <div class="product-recommendations_list">
+            {%- for product in recommendations.products -%}
+                <div class="product-recommendations_item">
+                    <a href="{{ product.url }}">
+                        <img
+                                class="product__img"
+                                src="{{ product.featured_image | image_url}}"
+                                alt="{{ product.featured_image.alt }}"
+                        />
+                        <p class="product-recommendations_title">{{ product.title }}</p>
+                        <p class="product-recommendations_price">{{ product.price | money}}</p>
+                    </a>
+                </div>
+            {%- endfor -%}
+        </div>
+    {%- endif -%}
+</div>
+<script src="{{ 'custom-recommendations.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+
+{
+"name": "t:sections.product-recommendations.name",
+"tag": "section",
+"class": "custom-recs",
+"settings": [
+{
+"type": "text",
+"id": "title_text",
+"default": "You may also like",
+"label": "Sections title"
+},
+{
+"type": "color",
+"id": "title_color",
+"default": "#000000",
+"label": "Titles color"
+},
+{
+"type": "text",
+"id": "subtitle_text",
+"default": "Here is the list of recommended products",
+"label": "Sections subtitle"
+},
+{
+"type": "color",
+"id": "subtitle_color",
+"default": "#000000",
+"label": "Subtitles color"
+},
+{
+"type": "number",
+"id": "quantity",
+"default": 4,
+"label": "Limit products in list"
+},
+{
+"type": "checkbox",
+"id": "show",
+"default": true,
+"label": "Do you want to show thi section?"
+}
+]
+}
+
+{% endschema %}

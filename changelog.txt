@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.7.0] - 26.11.2021
+
+### Added
+- custom product recommendation section (with it's js and css files)
+- js file for header which contains functionality for mobile menu popup
+
+### Changed
+- finished mobile markup
+- connected custom product recs with custom product template
+
 ## [0.6.0] - 25.11.2021
 
 ### Changed

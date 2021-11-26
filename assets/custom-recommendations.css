@@ -1,0 +1,62 @@
+.product-recommendations{
+    margin: 100px auto 80px;
+}
+.product-recommendations h2,
+.product-recommendations h3{
+    font-family: 'Mulish',sans-serif;
+    font-style: normal;
+    margin:  0;
+}
+.product-recommendations h2{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+.product-recommendations h3{
+    font-size: 21px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.product-recommendations_list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+.product-recommendations_item a{
+    text-decoration: none;
+}
+.product-recommendations_item p{
+    margin: 0;
+}
+.product__img {
+    width: 100%;
+    display: block;
+}
+.product-recommendations_item .product-recommendations_title{
+    font-family: 'Goudy Bookletter 1911',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #202020;
+    margin: 6px 0;
+}
+.product-recommendations_item .product-recommendations_price{
+    font-family: Mulish,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: #c00;
+}
+@media screen and (max-width: 768px){
+    .page-width.custom.product-recommendations{
+        padding: 0 20px;
+    }
+    .product-recommendations_list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+}

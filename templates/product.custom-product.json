@@ -60,8 +60,10 @@
       "settings": {}
     },
     "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {}
+      "type": "custom-recommendations",
+      "settings": {
+
+      }
     }
   },
   "order": [

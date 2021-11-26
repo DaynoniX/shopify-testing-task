@@ -14,18 +14,17 @@ jQuery(document).ready(function($){
         slidesToScroll: 1,
         focusOnSelect: true,
         infinite: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                }
+            }
+        ],
+        nextArrow: '.product-slider_nav__arrow.next',
+        prevArrow: '.product-slider_nav__arrow.prev'
     };
-    if($('.product-slider_nav').children.length > 8){
-        params = {
-            ...params,
-            nextArrow: '.product-slider_nav__arrow.next',
-            prevArrow: '.product-slider_nav__arrow.prev'
-        }
-    } else {
-        params = {
-            ...params,
-            arrows: true
-        }
-    }
     $('.product-slider_nav').slick(params)
 })

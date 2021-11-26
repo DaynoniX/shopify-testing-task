@@ -96,7 +96,7 @@
         padding: 0 20px;
     }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 769px){
     .custom-header{
         height: 72px;
     }
@@ -126,17 +126,20 @@
     .custom-header .navbar .mobile-menu{
         display: block;
         position: fixed;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
-        transform: translateX(-100%);
+        transform: translateX(-100vw);
         background: #131824;
         left: 0;
         top: 0;
         padding: 80px 20px 0;
         z-index: 1;
+        transition: 0.2s;
     }
     .custom-header .navbar .mobile-menu li>a{
-        color: #ffffff;
+        font-size: 21px;
+        line-height: 30px;
+        color: #FFFFFF;
     }
     .custom-header .navbar .mobile-menu li>a.current{
         color: #CC0000;
@@ -144,5 +147,63 @@
     .custom-header .navbar .mobile-menu ul{
         flex-direction: column;
     }
+    .custom-header .navbar .mobile-menu.active{
+        transform: translateX(0);
+        transition: 0.2s;
+    }
+    .custom-header .navbar .mobile-menu .icon-close{
+        width: 24px;
+        height: 24px;
+        background: #ffffff;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .mobile-search{
+        position: relative;
+    }
+    .mobile-search input{
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-family: 'Mulish',sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+        padding: 15px 0;
+        outline: none;
 
+    }
+    .mobile-search input:focus-visible {
+        outline-offset: 0;
+        box-shadow: none;
+    }
+    .mobile-search input::placeholder{
+        font-family: 'Mulish',sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+        opacity: 0.33;
+    }
+    .mobile-search .icon-search{
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        background: #fff;
+        opacity: .33;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .custom-header li{
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    }
 }
