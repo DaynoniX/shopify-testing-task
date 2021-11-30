@@ -16,7 +16,7 @@ jQuery(document).ready(function($){
         infinite: false,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 6,
                     slidesToScroll: 1,

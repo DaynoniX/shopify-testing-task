@@ -6,7 +6,6 @@ if (!customElements.get('product-form')) {
       this.form = this.querySelector('form');
       this.form.querySelector('[name=id]').disabled = false;
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
-      this.cartNotification = document.querySelector('cart-notification');
     }
 
     onSubmitHandler(evt) {
@@ -15,7 +14,6 @@ if (!customElements.get('product-form')) {
       if (submitButton.classList.contains('loading')) return; 
 
       this.handleErrorMessage();
-      this.cartNotification.setActiveElement(document.activeElement);
 
       submitButton.setAttribute('aria-disabled', true);
       submitButton.classList.add('loading');
@@ -25,7 +23,7 @@ if (!customElements.get('product-form')) {
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       config.body = JSON.stringify({
         ...JSON.parse(serializeForm(this.form)),
-        sections: this.cartNotification.getSectionsToRender().map((section) => section.id),
+        sections: 'ajax-cart-list',
         sections_url: window.location.pathname
       });
 
@@ -36,8 +34,7 @@ if (!customElements.get('product-form')) {
             this.handleErrorMessage(response.description);
             return;
           }
-
-          this.cartNotification.renderContents(response);
+          document.querySelector('.cart-item_list').innerHTML = response.sections['ajax-cart-list'];
         })
         .catch((e) => {
           console.error(e);
@@ -46,7 +43,13 @@ if (!customElements.get('product-form')) {
           submitButton.classList.remove('loading');
           submitButton.removeAttribute('aria-disabled');
           this.querySelector('.loading-overlay__spinner').classList.add('hidden');
+
         });
+      fetch('/cart.js', {method: 'GET',})
+          .then((response) => response.json())
+          .then((response) => {
+            document.querySelector('#cart-counter').innerText = response.item_count;
+          })
     }
 
     handleErrorMessage(errorMessage = false) {

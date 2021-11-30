@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.0] - 30.11.2021
+
+### Added
+- section for ajax cart to render it on carts update
+- delete btn for ajax cart (functionality in ajax-cart.js)
+
+### Changed
+- product form (to allow adding an item to cart on submit and to avoid cart notifications rendering)
+- polished CSS for mobile and tablets
+
+### Deleted
+- cart notifications snippet from header
+
 ## [0.7.0] - 26.11.2021
 
 ### Added
